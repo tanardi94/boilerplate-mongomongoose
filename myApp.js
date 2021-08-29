@@ -93,13 +93,10 @@ const removeById = (personId, done) => {
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
   Person.remove({name: nameToRemove}, (err, data) => {
-    if (err) {
-      console.error(err);
-    }
-	data = JSON.parse(JSON.stringify(data))
-    done(null, data);
-  });
-};
+    if (err) return console.log(err)
+    done(null, data)
+  })
+}
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
