@@ -91,14 +91,12 @@ const removeById = (personId, done) => {
 };
 
 const removeManyPeople = (done) => {
-  const nameToRemove = {
-	  name: 'Mary'
-  }
-  Person.remove(nameToRemove, (err, resp) => {
-    if (err) return console.log(err)
-    done(null, JSON.Parse(JSON.stringify(resp)))
+  const nameToRemove = {name: "Mary"};
+  Person.remove(nameToRemove, function(err,data) {
+    if(err) return done(err)
+    done(null, data)
   })
-}
+};
 
 const queryChain = (done) => {
   const foodToSearch = "burrito";
