@@ -92,8 +92,8 @@ const removeById = (personId, done) => {
 
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
-  Person.deleteMany({'name': nameToRemove}, (err, resp) => {
-    if (err) return console.log(err)
+  Person.remove({'name': nameToRemove}, (err, resp) => {
+    if (err) return console.log(JSON.parse(JSON.stringify(err)))
     done(null, resp)
   })
 }
