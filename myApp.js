@@ -92,9 +92,9 @@ const removeById = (personId, done) => {
 
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
-  Person.remove({name: nameToRemove}, (err, data) => {
+  Person.remove({name: nameToRemove}, (err, resp) => {
     if (err) return console.log(err)
-    done(null, JSON.parse(data))
+    done(null, resp)
   })
 }
 
