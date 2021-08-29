@@ -93,7 +93,7 @@ const removeById = (personId, done) => {
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
   Person.remove({ name: nameToRemove }, function(error, data) {
-    error ? done(error) : done(error, data);
+    error ? done(error) : done(null, data);
   });
 };
 
