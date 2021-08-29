@@ -96,6 +96,7 @@ const removeManyPeople = (done) => {
     if (err) {
       console.error(err);
     }
+	data = JSON.parse(JSON.stringify(data))
     done(null, data);
   });
 };
